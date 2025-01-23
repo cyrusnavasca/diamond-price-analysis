@@ -34,7 +34,7 @@ The dataset used in this project is the "Diamonds Price Dataset" collected by Am
 
 ```{r, warning=FALSE, message=FALSE}
 # Reading in our dataset
-diamonds <- read_csv('/Users/cyrusnavasca9/126_HW_Project/DiamondsPrices2022.csv') |>
+diamonds <- read_csv('DiamondsPrices2022.csv') |>
   select(-1)
 
 # Creating a kable of basic summary statistics
