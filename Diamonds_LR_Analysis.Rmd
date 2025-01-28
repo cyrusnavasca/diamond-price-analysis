@@ -1,5 +1,5 @@
 ---
-title: 'Analyzing 2022 Diamond Prices With Linear Regression'
+title: '2022 Diamond Price Analysis'
 author: "Cyrus Navasca, Alexander Bloyer, Lucas Webster"
 date: "December 2024"
 output:
@@ -128,7 +128,7 @@ Here, we see that the random sample successfully takes 400 observations and main
 
 ## Correlation Matrix
 ```{r, warning=FALSE, message=FALSE}
-# Graphic a correlation matrix of numerical variables
+# Graphing a correlation matrix of numerical variables
 num_vars <- diamonds_df |> 
   select(carat, depth, table, price, x, y, z)
 
@@ -209,7 +209,7 @@ As for the categorical variables which are incorporated via color, we can observ
 
 ## Variable Distributions
 ```{r, warning=FALSE, message=FALSE}
-# Graphic histogram of price
+# Graphing histogram of price
 ggplot(diamonds_df) +
   geom_histogram(mapping = aes(x = price), color = "black", fill = "forestgreen") +
   geom_vline(xintercept = mean(diamonds_df$price),
@@ -259,7 +259,7 @@ with a mean of `r mean(diamonds_df$depth)` as denoted by the red dotted line. We
 from the mean.
 
 ```{r, warning=FALSE, message=FALSE}
-# Graphic bar chart of cut
+# Graphiing bar chart of cut
 ggplot(diamonds_df) +
   geom_bar(mapping = aes(x = cut, fill = cut), color = "black") +
   ggtitle("Bar Chart of Cut") + xlab("Cut") + ylab("Frequency") +
@@ -271,7 +271,7 @@ are more common. Since `cut` is ordinal, we could say that the distribution of c
 is left skewed and not Normally distributed.
 
 ```{r, warning=FALSE, message=FALSE}
-# Graphic bar chart of clarity
+# Graphing bar chart of clarity
 ggplot(diamonds_df) +
   geom_bar(mapping = aes(x = clarity, fill = clarity), color = "black") +
   ggtitle("Bar Chart of Clarity") + xlab("Clarity") + ylab("Freqeuncy") +
@@ -281,7 +281,7 @@ ggplot(diamonds_df) +
 Based on this bar chart, we find clarity in our sample to be nearly bimodal with peaks at SI1 and VS2 as well as nearly symmetrical. I1 and IF are the most uncommon clarity levels in this sample with SI1 being the most common. Note that the bimodal nature of this distribution implies that clarity is not Normally distributed.
 
 ```{r, warning=FALSE, message=FALSE}
-# Graphic bar chart of color
+# Graphing bar chart of color
 ggplot(diamonds_df) +
   geom_bar(mapping = aes(x = color, fill = color), color = "black") + 
   ggtitle("Bar Chart of Color") + xlab("Color") + ylab("Frequency") +
